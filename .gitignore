@@ -1,0 +1,50 @@
+# Môi trường ảo (Virtual Environments)
+.capstonevenv
+.venv/
+venv/
+env/
+ENV/
+bin/
+lib/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+
+# Bộ nhớ đệm Python (Python cache)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swo
+*.swp
+
+# Phân tích mã nguồn và Thử nghiệm (Linting / Testing)
+.pytest_cache/
+.tox/
+.coverage
+htmlcov/
+.nosenv/
+.htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# File cấu hình môi trường bảo mật (Environment Variables / Secrets)
+.env
+.env.local
+.env.*.local
+*.env
+*.secret
+
+# Thư mục của trình soạn thảo code (IDE / Editors)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# File hệ điều hành (OS generated files)
+.DS_Store
+Thumbs.db
