@@ -1,0 +1,11 @@
+﻿audit_id,patient_id,admission_id,department_id,days_in_hospital,clinical_clearance,pending_lab_count,lab_clearance,pending_patient_payable,billing_clearance,followup_appointment_scheduled,discharge_ready,audit_date
+DRA0000001,PAT000038,ADM00000917,D002,11,True,0,True,274.73,True,False,False,2026-05-23
+DRA0000002,PAT000060,ADM00001347,D002,10,True,0,True,630.36,False,False,False,2026-05-23
+DRA0000003,PAT000177,ADM00000004,D005,7,True,1,False,0.0,True,True,False,2026-05-23
+DRA0000004,PAT000789,ADM00001806,D002,4,True,0,True,0.0,True,False,False,2026-05-23
+DRA0000005,PAT001207,ADM00000017,D005,6,True,0,True,63.62,True,False,False,2026-05-23
+DRA0000006,PAT001915,ADM00002315,D012,5,True,0,True,105.53,True,False,False,2026-05-23
+DRA0000007,PAT002538,ADM00001428,D002,2,False,2,False,80.48,True,False,False,2026-05-23
+DRA0000008,PAT003462,ADM00001194,D005,3,True,0,True,395.21,False,False,False,2026-05-23
+DRA0000009,PAT003466,ADM00001660,D002,5,True,0,True,208.23,True,False,False,2026-05-23
+DRA0000010,PAT003714,ADM00001900,D005,5,True,0,True,0.0,True,False,False,2026-05-23

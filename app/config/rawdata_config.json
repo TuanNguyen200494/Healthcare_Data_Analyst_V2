@@ -1,0 +1,74 @@
+[
+    {
+        "table": "Patients",
+        "Description": "Lưu trữ Dữ liệu bệnh nhân tổng quát",
+        "required": "True",
+        "file": "patients.csv"
+    },
+    {
+        "table": "Encounters",
+        "Description": "Lưu trữ dữ liệu thăm khám",
+        "required": "True",
+        "file": "encounters.csv"
+    },
+    {
+        "table": "Admissions",
+        "Description": "Thông tin nhập viện",
+        "required": "True",
+        "file": "admissions.csv"
+    },
+    {
+        "table": "Beds",
+        "Description": "Thông tin giường bệnh",
+        "required": "True",
+        "file": "beds.csv"
+    },
+    {
+        "table": "Critical_Lists",
+        "Description": "Thông tin các ca bệnh đặc biệt lưu ý",
+        "required": "True",
+        "file": "high_risk_patient_watchlist.csv"
+    },
+    {
+        "table": "Departments",
+        "Description": "Thông Tin các Khoa, Phòng Ban",
+        "required": "True",
+        "file": "departments.csv"
+    },
+    {
+        "table": "Doctors",
+        "Description": "Thông Tin Bác Sĩ tại Bệnh Viện",
+        "required": "True",
+        "file": "doctors.csv"
+    },
+    {
+        "table": "Diagnoses",
+        "Description": "Thông Tin Chẩn Đoán",
+        "required": "True",
+        "file": "diagnoses.csv"
+    },
+    {
+        "table": "LabOrders",
+        "Description": "Yêu Cầu Xét Nghiệm",
+        "required": "True",
+        "file": "lab_orders.csv"
+    },
+    {
+        "table": "LabResults",
+        "Description": "Kết Quả Xét Nghiệm",
+        "required": "True",
+        "file": "lab_results.csv"
+    },
+    {
+        "table": "Medications",
+        "Description": "Danh Sách Các Loại Thuốc",
+        "required": "True",
+        "file": "medications.csv"
+    },
+    {
+        "table": "Prescriptions",
+        "Description": "Thông Tin Đơn Thuốc",
+        "required": "True",
+        "file": "prescriptions.csv"
+    }
+]

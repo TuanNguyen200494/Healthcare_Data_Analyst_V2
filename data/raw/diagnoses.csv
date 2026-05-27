@@ -1,0 +1,16 @@
+﻿diagnosis_code,diagnosis_name,diagnosis_group,is_chronic,risk_weight
+I10,Hypertension,Cardiovascular,True,10
+E11,Type 2 Diabetes,Endocrine,True,14
+J18,Pneumonia,Respiratory,False,18
+J45,Asthma,Respiratory,True,10
+S72,Femur Fracture,Orthopedic,False,16
+K35,Appendicitis,Surgical,False,12
+I50,Heart Failure,Cardiovascular,True,25
+I63,Stroke,Neurology,True,30
+N18,Chronic Kidney Disease,Renal,True,24
+A09,Gastroenteritis,Infectious,False,8
+O80,Normal Delivery,Obstetrics,False,6
+Z00,General Examination,Preventive,False,2
+M54,Back Pain,Musculoskeletal,False,5
+R50,Fever,General,False,5
+U07,Viral Infection,Infectious,False,9

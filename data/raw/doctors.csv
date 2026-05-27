@@ -1,0 +1,61 @@
+﻿doctor_id,doctor_name,gender,department_id,specialty,years_experience,employment_status
+DOC0001,Ho Anh,Female,D005,Orthopedics,14,Active
+DOC0002,Phan Cuong,Male,D006,Obstetrics,22,Active
+DOC0003,Ho Hai,Male,D006,Obstetrics,20,Active
+DOC0004,Ly Mai,Female,D005,Orthopedics,2,On Leave
+DOC0005,Phan Vy,Female,D002,Internal Medicine,2,Active
+DOC0006,Do Son,Male,D006,Obstetrics,33,Active
+DOC0007,Hoang Yen,Female,D005,Orthopedics,32,Active
+DOC0008,Vu Thao,Female,D011,Outpatient Clinic,25,Active
+DOC0009,Pham Thao,Female,D008,ICU,17,Active
+DOC0010,Do Tri,Male,D005,Orthopedics,35,Active
+DOC0011,Vu Nam,Male,D005,Orthopedics,14,Active
+DOC0012,Pham Son,Male,D004,Pediatrics,23,Active
+DOC0013,Vo Ha,Female,D012,Nephrology,25,Active
+DOC0014,Vo Khoa,Male,D005,Orthopedics,28,Active
+DOC0015,Tran Minh,Male,D004,Pediatrics,14,Active
+DOC0016,Bui Viet,Male,D007,General Surgery,10,Active
+DOC0017,Le Giang,Female,D002,Internal Medicine,16,Active
+DOC0018,Le Tri,Male,D004,Pediatrics,24,Active
+DOC0019,Dang Minh,Male,D006,Obstetrics,26,Resigned
+DOC0020,Ho Viet,Male,D011,Outpatient Clinic,12,Active
+DOC0021,Pham Khang,Male,D003,Cardiology,24,Active
+DOC0022,Phan Nam,Male,D002,Internal Medicine,35,Active
+DOC0023,Pham Giang,Female,D006,Obstetrics,31,Active
+DOC0024,Duong Vy,Female,D007,General Surgery,20,Active
+DOC0025,Ngo Nhu,Female,D004,Pediatrics,15,Active
+DOC0026,Pham Viet,Male,D011,Outpatient Clinic,28,Active
+DOC0027,Le Trang,Female,D002,Internal Medicine,30,Active
+DOC0028,Tran Huy,Male,D001,Emergency,19,Active
+DOC0029,Dang Dung,Female,D002,Internal Medicine,26,Active
+DOC0030,Ngo Huong,Female,D011,Outpatient Clinic,34,Active
+DOC0031,Phan Thao,Female,D007,General Surgery,21,Active
+DOC0032,Ngo Tri,Male,D008,ICU,35,Active
+DOC0033,Le Anh,Female,D008,ICU,11,Active
+DOC0034,Ly Dung,Male,D008,ICU,33,Active
+DOC0035,Duong Linh,Female,D012,Nephrology,11,Active
+DOC0036,Ngo Linh,Female,D002,Internal Medicine,29,Active
+DOC0037,Ly Phuc,Male,D003,Cardiology,19,Active
+DOC0038,Vo An,Male,D005,Orthopedics,33,Active
+DOC0039,Ho Vy,Female,D008,ICU,15,Active
+DOC0040,Tran Nhu,Female,D005,Orthopedics,3,Active
+DOC0041,Le Long,Male,D002,Internal Medicine,5,Active
+DOC0042,Ngo Tuan,Male,D002,Internal Medicine,30,Active
+DOC0043,Bui Lan,Female,D004,Pediatrics,10,Active
+DOC0044,Huynh Quan,Male,D005,Orthopedics,28,Active
+DOC0045,Pham Nhi,Female,D006,Obstetrics,34,Active
+DOC0046,Pham Huy,Male,D012,Nephrology,28,Active
+DOC0047,Hoang Vy,Female,D006,Obstetrics,33,Active
+DOC0048,Ho Khang,Male,D008,ICU,21,Active
+DOC0049,Nguyen Cuong,Male,D011,Outpatient Clinic,33,Active
+DOC0050,Ly Trang,Female,D003,Cardiology,12,Active
+DOC0051,Dang Khoa,Male,D006,Obstetrics,18,Active
+DOC0052,Phan Phuong,Female,D008,ICU,16,Active
+DOC0053,Ho Dung,Female,D011,Outpatient Clinic,32,Active
+DOC0054,Phan Huy,Male,D006,Obstetrics,25,Active
+DOC0055,Huynh Ngan,Female,D005,Orthopedics,20,Active
+DOC0056,Do Thanh,Male,D003,Cardiology,11,Active
+DOC0057,Nguyen Mai,Female,D007,General Surgery,27,Active
+DOC0058,Le Quan,Male,D011,Outpatient Clinic,26,Active
+DOC0059,Hoang Dung,Male,D008,ICU,32,Active
+DOC0060,Ngo Phuc,Male,D001,Emergency,25,Active

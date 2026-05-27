@@ -1,0 +1,296 @@
+﻿watchlist_id,patient_id,risk_level,risk_score,follow_up_type,reason,recommended_action,assigned_department_id,watchlist_status,created_at
+HPW00000001,PAT000018,High,52.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D011,Open,2026-05-23
+HPW00000002,PAT000030,High,57.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D011,Open,2026-05-23
+HPW00000003,PAT000041,High,71.0,Critical Lab Follow-up,3 chronic conditions; 2 critical lab result(s),Immediate clinician review,D011,Completed,2026-05-23
+HPW00000004,PAT000045,High,63.0,Critical Lab Follow-up,3 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000005,PAT000060,High,53.0,Readmission Risk,2 admissions in last 12 months,Schedule post-discharge follow-up,D012,In Progress,2026-05-23
+HPW00000006,PAT000068,High,47.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D011,In Progress,2026-05-23
+HPW00000007,PAT000076,Critical,79.0,Critical Lab Follow-up,Age 65+; 3 chronic conditions; 2 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000008,PAT000077,High,53.0,Readmission Risk,2 admissions in last 12 months,Schedule post-discharge follow-up,D011,In Progress,2026-05-23
+HPW00000009,PAT000093,High,46.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D011,In Progress,2026-05-23
+HPW00000010,PAT000099,High,46.0,Chronic Care Follow-up,2 chronic conditions,Care coordinator review,D003,In Progress,2026-05-23
+HPW00000011,PAT000122,High,51.0,Critical Lab Follow-up,3 chronic conditions; 1 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000012,PAT000124,High,50.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D011,Open,2026-05-23
+HPW00000013,PAT000128,High,67.0,Readmission Risk,Age 65+; 2 chronic conditions; Prior 30-day readmission,Schedule post-discharge follow-up,D012,Completed,2026-05-23
+HPW00000014,PAT000133,High,52.0,Critical Lab Follow-up,2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D011,In Progress,2026-05-23
+HPW00000015,PAT000168,High,56.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000016,PAT000179,High,62.0,Critical Lab Follow-up,2 critical lab result(s); Prior 30-day readmission,Immediate clinician review,D008,Completed,2026-05-23
+HPW00000017,PAT000199,High,48.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000018,PAT000200,High,70.0,Critical Lab Follow-up,Age 65+; 2 chronic conditions; 2 critical lab result(s),Immediate clinician review,D008,Open,2026-05-23
+HPW00000019,PAT000205,High,47.0,Critical Lab Follow-up,2 critical lab result(s),Immediate clinician review,D003,In Progress,2026-05-23
+HPW00000020,PAT000209,High,50.0,Critical Lab Follow-up,2 critical lab result(s),Immediate clinician review,D008,Open,2026-05-23
+HPW00000021,PAT000223,High,48.0,Readmission Risk,Age 65+; Prior 30-day readmission,Schedule post-discharge follow-up,D011,In Progress,2026-05-23
+HPW00000022,PAT000255,High,59.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D008,Completed,2026-05-23
+HPW00000023,PAT000261,High,62.0,Critical Lab Follow-up,2 chronic conditions; 1 critical lab result(s); Prior 30-day readmission,Immediate clinician review,D002,Open,2026-05-23
+HPW00000024,PAT000273,High,50.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D011,Open,2026-05-23
+HPW00000025,PAT000279,High,46.0,Chronic Care Follow-up,2 chronic conditions,Care coordinator review,D012,Open,2026-05-23
+HPW00000026,PAT000287,High,50.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D012,In Progress,2026-05-23
+HPW00000027,PAT000301,High,51.0,Critical Lab Follow-up,2 critical lab result(s),Immediate clinician review,D011,Completed,2026-05-23
+HPW00000028,PAT000306,High,47.0,Chronic Care Follow-up,Age 65+; 3 chronic conditions,Care coordinator review,D008,Open,2026-05-23
+HPW00000029,PAT000345,High,51.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D002,Open,2026-05-23
+HPW00000030,PAT000382,Critical,81.0,Critical Lab Follow-up,Age 65+; 2 admissions in last 12 months; 1 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000031,PAT000392,High,64.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions; 2 ED visits in last 6 months,Care coordinator review,D012,Open,2026-05-23
+HPW00000032,PAT000408,High,46.0,Critical Lab Follow-up,2 ED visits in last 6 months; 1 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000033,PAT000409,High,46.0,Critical Lab Follow-up,2 chronic conditions; 2 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000034,PAT000411,High,48.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D011,Open,2026-05-23
+HPW00000035,PAT000417,High,46.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000036,PAT000444,High,70.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions; 2 ED visits in last 6 months,Care coordinator review,D003,Open,2026-05-23
+HPW00000037,PAT000456,High,49.0,Critical Lab Follow-up,3 critical lab result(s),Immediate clinician review,D012,In Progress,2026-05-23
+HPW00000038,PAT000489,High,49.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D003,In Progress,2026-05-23
+HPW00000039,PAT000509,High,47.0,Readmission Risk,Age 65+; Prior 30-day readmission,Schedule post-discharge follow-up,D002,In Progress,2026-05-23
+HPW00000040,PAT000510,High,47.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D002,Open,2026-05-23
+HPW00000041,PAT000534,High,48.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D012,In Progress,2026-05-23
+HPW00000042,PAT000540,High,47.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D003,Open,2026-05-23
+HPW00000043,PAT000556,High,67.0,Critical Lab Follow-up,Age 65+; 2 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000044,PAT000565,High,47.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D003,Open,2026-05-23
+HPW00000045,PAT000572,High,58.0,Critical Lab Follow-up,2 ED visits in last 6 months; 1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000046,PAT000574,High,52.0,Critical Lab Follow-up,2 critical lab result(s),Immediate clinician review,D012,Completed,2026-05-23
+HPW00000047,PAT000603,High,49.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D002,In Progress,2026-05-23
+HPW00000048,PAT000609,High,67.0,Critical Lab Follow-up,Age 65+; 3 chronic conditions; 1 critical lab result(s),Immediate clinician review,D008,Open,2026-05-23
+HPW00000049,PAT000630,High,63.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D012,Open,2026-05-23
+HPW00000050,PAT000639,High,49.0,Chronic Care Follow-up,Age 65+; 3 chronic conditions,Care coordinator review,D002,Open,2026-05-23
+HPW00000051,PAT000640,High,69.0,Critical Lab Follow-up,Age 65+; 3 critical lab result(s),Immediate clinician review,D012,Open,2026-05-23
+HPW00000052,PAT000649,High,46.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D012,In Progress,2026-05-23
+HPW00000053,PAT000671,High,48.0,Critical Lab Follow-up,Age 65+; 2 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000054,PAT000674,High,61.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D011,Open,2026-05-23
+HPW00000055,PAT000685,High,56.0,Readmission Risk,2 admissions in last 12 months; Prior 30-day readmission,Schedule post-discharge follow-up,D002,In Progress,2026-05-23
+HPW00000056,PAT000711,High,53.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D003,In Progress,2026-05-23
+HPW00000057,PAT000727,High,51.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000058,PAT000753,High,61.0,Critical Lab Follow-up,3 chronic conditions; 1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000059,PAT000785,High,60.0,Critical Lab Follow-up,2 admissions in last 12 months; 1 critical lab result(s),Immediate clinician review,D003,In Progress,2026-05-23
+HPW00000060,PAT000802,High,58.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D008,In Progress,2026-05-23
+HPW00000061,PAT000807,High,52.0,Critical Lab Follow-up,Age 65+; 2 critical lab result(s),Immediate clinician review,D002,Completed,2026-05-23
+HPW00000062,PAT000813,High,51.0,Critical Lab Follow-up,2 critical lab result(s),Immediate clinician review,D011,In Progress,2026-05-23
+HPW00000063,PAT000848,High,48.0,Critical Lab Follow-up,3 critical lab result(s),Immediate clinician review,D003,In Progress,2026-05-23
+HPW00000064,PAT000849,High,48.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D012,Open,2026-05-23
+HPW00000065,PAT000861,High,50.0,Critical Lab Follow-up,2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D011,Open,2026-05-23
+HPW00000066,PAT000874,High,59.0,Readmission Risk,3 chronic conditions; Prior 30-day readmission,Schedule post-discharge follow-up,D012,Completed,2026-05-23
+HPW00000067,PAT000878,Critical,89.0,Readmission Risk,3 chronic conditions; 3 admissions in last 12 months,Schedule post-discharge follow-up,D008,Completed,2026-05-23
+HPW00000068,PAT000922,High,53.0,Clinical Risk Review,High combined risk score,Nurse call and physician review,D002,Completed,2026-05-23
+HPW00000069,PAT000927,High,46.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D008,In Progress,2026-05-23
+HPW00000070,PAT000950,High,56.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D002,Completed,2026-05-23
+HPW00000071,PAT000987,High,53.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D011,Open,2026-05-23
+HPW00000072,PAT000991,High,56.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000073,PAT000999,High,47.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D003,Completed,2026-05-23
+HPW00000074,PAT001019,High,48.0,Clinical Risk Review,2 ED visits in last 6 months,Nurse call and physician review,D003,In Progress,2026-05-23
+HPW00000075,PAT001023,High,51.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D002,In Progress,2026-05-23
+HPW00000076,PAT001035,High,48.0,Readmission Risk,Age 65+; 2 admissions in last 12 months,Schedule post-discharge follow-up,D003,Open,2026-05-23
+HPW00000077,PAT001039,High,52.0,Critical Lab Follow-up,Age 65+; 2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000078,PAT001061,High,56.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D003,Open,2026-05-23
+HPW00000079,PAT001066,High,51.0,Clinical Risk Review,High combined risk score,Nurse call and physician review,D003,In Progress,2026-05-23
+HPW00000080,PAT001097,High,47.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D011,Open,2026-05-23
+HPW00000081,PAT001098,High,66.0,Critical Lab Follow-up,2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D008,Open,2026-05-23
+HPW00000082,PAT001141,High,63.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D003,In Progress,2026-05-23
+HPW00000083,PAT001155,High,58.0,Critical Lab Follow-up,Age 65+; 2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000084,PAT001163,High,48.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D012,In Progress,2026-05-23
+HPW00000085,PAT001192,High,68.0,Critical Lab Follow-up,2 admissions in last 12 months; 1 critical lab result(s); Prior 30-day readmission,Immediate clinician review,D012,In Progress,2026-05-23
+HPW00000086,PAT001196,High,49.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000087,PAT001246,High,63.0,Chronic Care Follow-up,Age 65+; 3 chronic conditions,Care coordinator review,D003,Open,2026-05-23
+HPW00000088,PAT001279,High,54.0,Critical Lab Follow-up,2 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000089,PAT001287,High,71.0,Critical Lab Follow-up,Age 65+; 2 admissions in last 12 months; 1 critical lab result(s),Immediate clinician review,D011,Completed,2026-05-23
+HPW00000090,PAT001288,Critical,81.0,Critical Lab Follow-up,3 chronic conditions; 2 ED visits in last 6 months; 1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000091,PAT001294,High,50.0,Clinical Risk Review,Age 65+; 2 ED visits in last 6 months,Nurse call and physician review,D003,In Progress,2026-05-23
+HPW00000092,PAT001314,High,53.0,Critical Lab Follow-up,3 chronic conditions; 1 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000093,PAT001331,High,73.0,Critical Lab Follow-up,3 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000094,PAT001351,High,46.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D002,Completed,2026-05-23
+HPW00000095,PAT001407,High,53.0,Critical Lab Follow-up,Age 65+; 2 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000096,PAT001419,High,47.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D011,Open,2026-05-23
+HPW00000097,PAT001420,High,48.0,Critical Lab Follow-up,1 critical lab result(s); Prior 30-day readmission,Immediate clinician review,D011,Open,2026-05-23
+HPW00000098,PAT001423,High,57.0,Critical Lab Follow-up,Age 65+; 3 chronic conditions; 1 critical lab result(s),Immediate clinician review,D008,Open,2026-05-23
+HPW00000099,PAT001425,High,67.0,Critical Lab Follow-up,2 critical lab result(s),Immediate clinician review,D011,Completed,2026-05-23
+HPW00000100,PAT001442,High,58.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D008,Open,2026-05-23
+HPW00000101,PAT001456,High,54.0,Critical Lab Follow-up,Age 65+; 2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000102,PAT001458,High,49.0,Critical Lab Follow-up,Age 65+; 2 critical lab result(s),Immediate clinician review,D011,Open,2026-05-23
+HPW00000103,PAT001463,High,46.0,Chronic Care Follow-up,2 chronic conditions,Care coordinator review,D008,Open,2026-05-23
+HPW00000104,PAT001471,High,61.0,Critical Lab Follow-up,2 admissions in last 12 months; 1 critical lab result(s),Immediate clinician review,D011,In Progress,2026-05-23
+HPW00000105,PAT001485,High,49.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000106,PAT001495,High,50.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D012,Open,2026-05-23
+HPW00000107,PAT001505,High,51.0,Critical Lab Follow-up,Age 65+; 2 critical lab result(s),Immediate clinician review,D008,In Progress,2026-05-23
+HPW00000108,PAT001507,High,46.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000109,PAT001514,High,61.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000110,PAT001515,High,48.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D011,In Progress,2026-05-23
+HPW00000111,PAT001542,High,52.0,Critical Lab Follow-up,Age 65+; 2 critical lab result(s),Immediate clinician review,D003,In Progress,2026-05-23
+HPW00000112,PAT001544,High,53.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000113,PAT001545,Critical,95.0,Critical Lab Follow-up,Age 65+; 3 chronic conditions; 2 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000114,PAT001548,High,47.0,Critical Lab Follow-up,3 chronic conditions; 1 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000115,PAT001561,High,48.0,Critical Lab Follow-up,Age 65+; 2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D008,Open,2026-05-23
+HPW00000116,PAT001582,High,46.0,Critical Lab Follow-up,2 critical lab result(s),Immediate clinician review,D008,In Progress,2026-05-23
+HPW00000117,PAT001593,High,62.0,Critical Lab Follow-up,2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D008,In Progress,2026-05-23
+HPW00000118,PAT001595,Critical,83.0,Critical Lab Follow-up,Age 65+; 2 ED visits in last 6 months; 2 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000119,PAT001619,High,47.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D012,In Progress,2026-05-23
+HPW00000120,PAT001621,High,53.0,Critical Lab Follow-up,3 chronic conditions; 1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000121,PAT001622,High,51.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D008,In Progress,2026-05-23
+HPW00000122,PAT001684,High,46.0,Critical Lab Follow-up,2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D011,In Progress,2026-05-23
+HPW00000123,PAT001692,High,48.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D003,Open,2026-05-23
+HPW00000124,PAT001725,High,57.0,Readmission Risk,2 admissions in last 12 months,Schedule post-discharge follow-up,D011,Open,2026-05-23
+HPW00000125,PAT001732,High,58.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D008,Completed,2026-05-23
+HPW00000126,PAT001733,High,51.0,Clinical Risk Review,High combined risk score,Nurse call and physician review,D012,In Progress,2026-05-23
+HPW00000127,PAT001752,High,70.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000128,PAT001764,High,52.0,Critical Lab Follow-up,2 critical lab result(s),Immediate clinician review,D011,Open,2026-05-23
+HPW00000129,PAT001771,High,47.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D002,Completed,2026-05-23
+HPW00000130,PAT001809,High,46.0,Critical Lab Follow-up,Age 65+; 2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D012,Completed,2026-05-23
+HPW00000131,PAT001835,High,50.0,Chronic Care Follow-up,2 chronic conditions,Care coordinator review,D003,In Progress,2026-05-23
+HPW00000132,PAT001854,High,48.0,Critical Lab Follow-up,2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D011,Open,2026-05-23
+HPW00000133,PAT001860,High,53.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000134,PAT001867,Critical,81.0,Critical Lab Follow-up,Age 65+; 3 chronic conditions; 1 critical lab result(s); Prior 30-day readmission,Immediate clinician review,D012,Open,2026-05-23
+HPW00000135,PAT001870,High,47.0,Critical Lab Follow-up,2 critical lab result(s),Immediate clinician review,D008,In Progress,2026-05-23
+HPW00000136,PAT001904,High,47.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D011,In Progress,2026-05-23
+HPW00000137,PAT001915,High,65.0,Readmission Risk,2 admissions in last 12 months; 3 ED visits in last 6 months,Schedule post-discharge follow-up,D012,Open,2026-05-23
+HPW00000138,PAT001923,High,70.0,Critical Lab Follow-up,Age 65+; 2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D012,Open,2026-05-23
+HPW00000139,PAT001928,High,46.0,Chronic Care Follow-up,2 chronic conditions,Care coordinator review,D003,In Progress,2026-05-23
+HPW00000140,PAT001949,High,48.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D003,Open,2026-05-23
+HPW00000141,PAT001952,High,51.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D011,In Progress,2026-05-23
+HPW00000142,PAT001959,High,49.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D011,Open,2026-05-23
+HPW00000143,PAT001974,High,50.0,Critical Lab Follow-up,Age 65+; 2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D003,In Progress,2026-05-23
+HPW00000144,PAT001979,High,47.0,Critical Lab Follow-up,3 chronic conditions; 1 critical lab result(s),Immediate clinician review,D012,In Progress,2026-05-23
+HPW00000145,PAT002037,High,51.0,Chronic Care Follow-up,Age 65+; 3 chronic conditions,Care coordinator review,D002,In Progress,2026-05-23
+HPW00000146,PAT002046,High,68.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D012,Open,2026-05-23
+HPW00000147,PAT002056,High,47.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D003,In Progress,2026-05-23
+HPW00000148,PAT002063,High,47.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D011,Open,2026-05-23
+HPW00000149,PAT002148,High,49.0,Critical Lab Follow-up,3 chronic conditions; 1 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000150,PAT002157,Critical,83.0,Critical Lab Follow-up,Age 65+; 2 admissions in last 12 months; 1 critical lab result(s),Immediate clinician review,D008,Completed,2026-05-23
+HPW00000151,PAT002163,High,52.0,Clinical Risk Review,Age 65+; 3 ED visits in last 6 months,Nurse call and physician review,D002,Completed,2026-05-23
+HPW00000152,PAT002166,High,66.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D003,Open,2026-05-23
+HPW00000153,PAT002179,High,52.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D011,In Progress,2026-05-23
+HPW00000154,PAT002184,High,70.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D012,Open,2026-05-23
+HPW00000155,PAT002205,High,54.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000156,PAT002228,High,48.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D002,In Progress,2026-05-23
+HPW00000157,PAT002229,High,59.0,Critical Lab Follow-up,3 chronic conditions; 2 critical lab result(s),Immediate clinician review,D008,In Progress,2026-05-23
+HPW00000158,PAT002313,High,55.0,Critical Lab Follow-up,Age 65+; 3 chronic conditions; 1 critical lab result(s),Immediate clinician review,D012,In Progress,2026-05-23
+HPW00000159,PAT002325,High,72.0,Readmission Risk,Age 65+; 2 chronic conditions; 2 admissions in last 12 months,Schedule post-discharge follow-up,D002,In Progress,2026-05-23
+HPW00000160,PAT002341,High,51.0,Critical Lab Follow-up,3 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000161,PAT002354,High,48.0,Critical Lab Follow-up,Age 65+; 2 critical lab result(s),Immediate clinician review,D002,Completed,2026-05-23
+HPW00000162,PAT002358,High,48.0,Critical Lab Follow-up,2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000163,PAT002364,High,52.0,Critical Lab Follow-up,2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000164,PAT002365,High,69.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D012,In Progress,2026-05-23
+HPW00000165,PAT002375,High,53.0,Critical Lab Follow-up,1 critical lab result(s); Prior 30-day readmission,Immediate clinician review,D003,In Progress,2026-05-23
+HPW00000166,PAT002385,High,58.0,Critical Lab Follow-up,2 critical lab result(s),Immediate clinician review,D012,Open,2026-05-23
+HPW00000167,PAT002401,High,47.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D011,Completed,2026-05-23
+HPW00000168,PAT002416,High,58.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D003,Completed,2026-05-23
+HPW00000169,PAT002420,High,48.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000170,PAT002458,High,49.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D003,In Progress,2026-05-23
+HPW00000171,PAT002459,High,63.0,Critical Lab Follow-up,Age 65+; 3 chronic conditions; 1 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000172,PAT002468,High,55.0,Critical Lab Follow-up,Age 65+; 3 chronic conditions; 1 critical lab result(s),Immediate clinician review,D011,In Progress,2026-05-23
+HPW00000173,PAT002473,High,69.0,Critical Lab Follow-up,2 ED visits in last 6 months; 1 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000174,PAT002477,High,47.0,Clinical Risk Review,High combined risk score,Nurse call and physician review,D008,Open,2026-05-23
+HPW00000175,PAT002481,High,50.0,Critical Lab Follow-up,2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D011,Open,2026-05-23
+HPW00000176,PAT002499,High,58.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D011,In Progress,2026-05-23
+HPW00000177,PAT002503,High,49.0,Chronic Care Follow-up,Age 65+; 3 chronic conditions,Care coordinator review,D011,Open,2026-05-23
+HPW00000178,PAT002545,High,48.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D012,In Progress,2026-05-23
+HPW00000179,PAT002551,High,55.0,Chronic Care Follow-up,Age 65+; 3 chronic conditions,Care coordinator review,D003,Open,2026-05-23
+HPW00000180,PAT002603,High,52.0,Critical Lab Follow-up,3 critical lab result(s),Immediate clinician review,D011,In Progress,2026-05-23
+HPW00000181,PAT002606,High,52.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D008,Open,2026-05-23
+HPW00000182,PAT002615,High,65.0,Readmission Risk,3 chronic conditions; Prior 30-day readmission,Schedule post-discharge follow-up,D003,In Progress,2026-05-23
+HPW00000183,PAT002675,High,67.0,Readmission Risk,2 admissions in last 12 months; Prior 30-day readmission,Schedule post-discharge follow-up,D002,Open,2026-05-23
+HPW00000184,PAT002693,High,51.0,Clinical Risk Review,High combined risk score,Nurse call and physician review,D003,In Progress,2026-05-23
+HPW00000185,PAT002713,High,48.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000186,PAT002723,High,65.0,Critical Lab Follow-up,2 critical lab result(s),Immediate clinician review,D011,Open,2026-05-23
+HPW00000187,PAT002732,High,70.0,Critical Lab Follow-up,2 critical lab result(s),Immediate clinician review,D002,Completed,2026-05-23
+HPW00000188,PAT002768,High,46.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D011,Completed,2026-05-23
+HPW00000189,PAT002784,High,55.0,Chronic Care Follow-up,Age 65+; 3 chronic conditions,Care coordinator review,D002,Open,2026-05-23
+HPW00000190,PAT002793,Critical,77.0,Critical Lab Follow-up,Age 65+; 3 chronic conditions; 1 critical lab result(s),Immediate clinician review,D003,In Progress,2026-05-23
+HPW00000191,PAT002796,High,49.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D011,In Progress,2026-05-23
+HPW00000192,PAT002800,High,60.0,Critical Lab Follow-up,2 admissions in last 12 months; 1 critical lab result(s),Immediate clinician review,D003,In Progress,2026-05-23
+HPW00000193,PAT002803,High,48.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D012,Open,2026-05-23
+HPW00000194,PAT002819,Critical,107.0,Critical Lab Follow-up,2 ED visits in last 6 months; 4 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000195,PAT002844,High,53.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000196,PAT002846,High,50.0,Critical Lab Follow-up,2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D011,Open,2026-05-23
+HPW00000197,PAT002858,High,51.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D012,In Progress,2026-05-23
+HPW00000198,PAT002886,High,46.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D003,In Progress,2026-05-23
+HPW00000199,PAT002900,High,57.0,Chronic Care Follow-up,2 chronic conditions,Care coordinator review,D012,In Progress,2026-05-23
+HPW00000200,PAT002902,High,53.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D012,In Progress,2026-05-23
+HPW00000201,PAT002912,High,47.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D002,In Progress,2026-05-23
+HPW00000202,PAT002926,Critical,101.0,Critical Lab Follow-up,Age 65+; 3 chronic conditions; 2 admissions in last 12 months; 1 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000203,PAT002946,High,56.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D011,In Progress,2026-05-23
+HPW00000204,PAT002950,High,51.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D002,In Progress,2026-05-23
+HPW00000205,PAT002960,High,51.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D003,Completed,2026-05-23
+HPW00000206,PAT002969,High,57.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D011,In Progress,2026-05-23
+HPW00000207,PAT002970,High,48.0,Critical Lab Follow-up,2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D012,Open,2026-05-23
+HPW00000208,PAT002994,High,55.0,Critical Lab Follow-up,2 critical lab result(s),Immediate clinician review,D003,Completed,2026-05-23
+HPW00000209,PAT003004,High,49.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D003,Open,2026-05-23
+HPW00000210,PAT003007,High,49.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D012,In Progress,2026-05-23
+HPW00000211,PAT003011,High,47.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D002,Open,2026-05-23
+HPW00000212,PAT003013,High,47.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D008,In Progress,2026-05-23
+HPW00000213,PAT003032,High,49.0,Chronic Care Follow-up,Age 65+; 3 chronic conditions,Care coordinator review,D002,Open,2026-05-23
+HPW00000214,PAT003033,High,57.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D012,Open,2026-05-23
+HPW00000215,PAT003040,High,55.0,Critical Lab Follow-up,Age 65+; 3 chronic conditions; 1 critical lab result(s),Immediate clinician review,D003,Completed,2026-05-23
+HPW00000216,PAT003049,High,61.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D012,Open,2026-05-23
+HPW00000217,PAT003053,High,49.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D002,Completed,2026-05-23
+HPW00000218,PAT003071,High,46.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D003,Open,2026-05-23
+HPW00000219,PAT003112,High,51.0,Critical Lab Follow-up,3 chronic conditions; 2 critical lab result(s),Immediate clinician review,D008,Open,2026-05-23
+HPW00000220,PAT003115,Critical,87.0,Critical Lab Follow-up,Age 65+; 4 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000221,PAT003138,High,73.0,Critical Lab Follow-up,2 admissions in last 12 months; 1 critical lab result(s),Immediate clinician review,D003,In Progress,2026-05-23
+HPW00000222,PAT003142,High,52.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D003,Open,2026-05-23
+HPW00000223,PAT003155,High,47.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D002,Open,2026-05-23
+HPW00000224,PAT003171,High,46.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D008,In Progress,2026-05-23
+HPW00000225,PAT003175,High,53.0,Critical Lab Follow-up,Age 65+; 2 ED visits in last 6 months; 1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000226,PAT003190,Critical,82.0,Critical Lab Follow-up,3 admissions in last 12 months; 1 critical lab result(s); Prior 30-day readmission,Immediate clinician review,D011,Completed,2026-05-23
+HPW00000227,PAT003210,High,47.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000228,PAT003215,High,53.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D008,In Progress,2026-05-23
+HPW00000229,PAT003223,High,66.0,Critical Lab Follow-up,3 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000230,PAT003225,High,52.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D012,In Progress,2026-05-23
+HPW00000231,PAT003226,High,73.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000232,PAT003246,High,56.0,Critical Lab Follow-up,Age 65+; 2 critical lab result(s),Immediate clinician review,D003,In Progress,2026-05-23
+HPW00000233,PAT003261,High,50.0,Critical Lab Follow-up,Age 65+; 2 critical lab result(s),Immediate clinician review,D008,Open,2026-05-23
+HPW00000234,PAT003275,High,50.0,Critical Lab Follow-up,2 chronic conditions; 2 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000235,PAT003280,High,49.0,Critical Lab Follow-up,Age 65+; 2 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000236,PAT003320,High,61.0,Chronic Care Follow-up,2 chronic conditions,Care coordinator review,D012,In Progress,2026-05-23
+HPW00000237,PAT003323,High,50.0,Critical Lab Follow-up,2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D011,Open,2026-05-23
+HPW00000238,PAT003340,High,57.0,Readmission Risk,2 admissions in last 12 months; 2 ED visits in last 6 months,Schedule post-discharge follow-up,D002,In Progress,2026-05-23
+HPW00000239,PAT003373,High,47.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D002,Open,2026-05-23
+HPW00000240,PAT003374,High,47.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D002,In Progress,2026-05-23
+HPW00000241,PAT003375,High,62.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D002,In Progress,2026-05-23
+HPW00000242,PAT003395,High,58.0,Critical Lab Follow-up,Age 65+; 2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D012,In Progress,2026-05-23
+HPW00000243,PAT003422,Critical,77.0,Critical Lab Follow-up,2 admissions in last 12 months; 2 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000244,PAT003427,High,55.0,Critical Lab Follow-up,2 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000245,PAT003440,High,53.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D003,In Progress,2026-05-23
+HPW00000246,PAT003462,Critical,128.0,Critical Lab Follow-up,3 chronic conditions; 3 admissions in last 12 months; 2 ED visits in last 6 months; 2 critical lab result(s),Immediate clinician review,D003,In Progress,2026-05-23
+HPW00000247,PAT003472,High,46.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D011,Open,2026-05-23
+HPW00000248,PAT003512,High,52.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D003,In Progress,2026-05-23
+HPW00000249,PAT003533,High,57.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000250,PAT003540,High,55.0,Clinical Risk Review,Age 65+,Nurse call and physician review,D011,Open,2026-05-23
+HPW00000251,PAT003544,High,53.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D011,In Progress,2026-05-23
+HPW00000252,PAT003584,High,55.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D008,Open,2026-05-23
+HPW00000253,PAT003595,High,46.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000254,PAT003601,High,60.0,Critical Lab Follow-up,2 admissions in last 12 months; 1 critical lab result(s),Immediate clinician review,D002,Completed,2026-05-23
+HPW00000255,PAT003604,High,60.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D011,In Progress,2026-05-23
+HPW00000256,PAT003620,High,58.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D012,In Progress,2026-05-23
+HPW00000257,PAT003631,High,47.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D008,Open,2026-05-23
+HPW00000258,PAT003646,High,49.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000259,PAT003658,High,48.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D012,Completed,2026-05-23
+HPW00000260,PAT003661,High,56.0,Readmission Risk,Age 65+; 2 admissions in last 12 months,Schedule post-discharge follow-up,D008,In Progress,2026-05-23
+HPW00000261,PAT003662,High,55.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D011,Open,2026-05-23
+HPW00000262,PAT003679,High,48.0,Critical Lab Follow-up,Age 65+; 2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000263,PAT003683,High,52.0,Critical Lab Follow-up,2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000264,PAT003714,High,58.0,Readmission Risk,2 admissions in last 12 months; 2 ED visits in last 6 months; Prior 30-day readmission,Schedule post-discharge follow-up,D002,In Progress,2026-05-23
+HPW00000265,PAT003754,High,46.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000266,PAT003791,High,61.0,Critical Lab Follow-up,3 chronic conditions; 1 critical lab result(s),Immediate clinician review,D012,In Progress,2026-05-23
+HPW00000267,PAT003794,High,66.0,Readmission Risk,Age 65+; 2 admissions in last 12 months; Prior 30-day readmission,Schedule post-discharge follow-up,D011,Completed,2026-05-23
+HPW00000268,PAT003797,High,59.0,Critical Lab Follow-up,Age 65+; 2 critical lab result(s),Immediate clinician review,D003,In Progress,2026-05-23
+HPW00000269,PAT003798,High,51.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D008,Open,2026-05-23
+HPW00000270,PAT003813,High,58.0,Critical Lab Follow-up,Age 65+; 2 chronic conditions; 2 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000271,PAT003819,High,46.0,Critical Lab Follow-up,2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D012,Open,2026-05-23
+HPW00000272,PAT003865,High,49.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D012,In Progress,2026-05-23
+HPW00000273,PAT003882,High,64.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions; 2 ED visits in last 6 months,Care coordinator review,D012,In Progress,2026-05-23
+HPW00000274,PAT003884,High,72.0,Critical Lab Follow-up,2 chronic conditions; 2 ED visits in last 6 months; 1 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000275,PAT003886,High,58.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D011,In Progress,2026-05-23
+HPW00000276,PAT003889,High,49.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D002,Completed,2026-05-23
+HPW00000277,PAT003945,High,54.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D002,Open,2026-05-23
+HPW00000278,PAT003997,High,51.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D008,In Progress,2026-05-23
+HPW00000279,PAT004004,High,47.0,Critical Lab Follow-up,3 chronic conditions; 1 critical lab result(s),Immediate clinician review,D012,In Progress,2026-05-23
+HPW00000280,PAT004030,High,48.0,Readmission Risk,2 admissions in last 12 months,Schedule post-discharge follow-up,D003,In Progress,2026-05-23
+HPW00000281,PAT004032,High,47.0,Readmission Risk,Prior 30-day readmission,Schedule post-discharge follow-up,D002,Open,2026-05-23
+HPW00000282,PAT004038,High,46.0,Chronic Care Follow-up,Age 65+; 2 chronic conditions,Care coordinator review,D012,Open,2026-05-23
+HPW00000283,PAT004048,High,50.0,Critical Lab Follow-up,Age 65+; 2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23
+HPW00000284,PAT004069,High,51.0,Clinical Risk Review,High combined risk score,Nurse call and physician review,D012,Completed,2026-05-23
+HPW00000285,PAT004090,High,47.0,Chronic Care Follow-up,3 chronic conditions,Care coordinator review,D002,Open,2026-05-23
+HPW00000286,PAT004095,High,60.0,Critical Lab Follow-up,2 admissions in last 12 months; 1 critical lab result(s),Immediate clinician review,D012,Open,2026-05-23
+HPW00000287,PAT004100,Critical,84.0,Critical Lab Follow-up,Age 65+; 2 chronic conditions; 2 critical lab result(s),Immediate clinician review,D011,Open,2026-05-23
+HPW00000288,PAT004103,High,46.0,Readmission Risk,Age 65+; Prior 30-day readmission,Schedule post-discharge follow-up,D008,Completed,2026-05-23
+HPW00000289,PAT004127,High,51.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D002,Open,2026-05-23
+HPW00000290,PAT004133,High,51.0,Critical Lab Follow-up,Age 65+; 1 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000291,PAT004165,High,72.0,Critical Lab Follow-up,Age 65+; 3 critical lab result(s),Immediate clinician review,D003,Open,2026-05-23
+HPW00000292,PAT004172,High,56.0,Critical Lab Follow-up,Age 65+; 2 critical lab result(s),Immediate clinician review,D011,In Progress,2026-05-23
+HPW00000293,PAT004178,High,54.0,Critical Lab Follow-up,2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D012,In Progress,2026-05-23
+HPW00000294,PAT004183,High,57.0,Critical Lab Follow-up,1 critical lab result(s),Immediate clinician review,D003,Completed,2026-05-23
+HPW00000295,PAT004184,High,48.0,Critical Lab Follow-up,2 chronic conditions; 1 critical lab result(s),Immediate clinician review,D002,In Progress,2026-05-23

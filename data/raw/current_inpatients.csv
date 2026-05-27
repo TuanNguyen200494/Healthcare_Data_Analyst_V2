@@ -1,0 +1,11 @@
+﻿patient_id,admission_id,department_id,bed_id,admission_date,days_in_hospital,severity_level,diagnosis_name,diagnosis_group,estimated_discharge_date,care_status
+PAT000038,ADM00000917,D002,BED-D002-008,2026-05-13,11,High,Asthma,Respiratory,2026-05-30,High Dependency
+PAT000060,ADM00001347,D002,BED-D002-056,2026-05-14,10,High,General Examination,Preventive,2026-05-30,High Dependency
+PAT000177,ADM00000004,D005,BED-D005-008,2026-05-17,7,High,Back Pain,Musculoskeletal,2026-05-27,High Dependency
+PAT000789,ADM00001806,D002,BED-D002-071,2026-05-20,4,Critical,Gastroenteritis,Infectious,2026-05-25,Critical Care
+PAT001207,ADM00000017,D005,BED-D005-004,2026-05-18,6,High,Back Pain,Musculoskeletal,2026-05-28,High Dependency
+PAT001915,ADM00002315,D012,BED-D012-018,2026-05-19,5,Moderate,Chronic Kidney Disease,Renal,2026-05-28,Monitoring
+PAT002538,ADM00001428,D002,BED-D002-062,2026-05-22,2,High,Fever,General,2026-05-28,High Dependency
+PAT003462,ADM00001194,D005,BED-D005-006,2026-05-21,3,Critical,Back Pain,Musculoskeletal,2026-05-26,Critical Care
+PAT003466,ADM00001660,D002,BED-D002-077,2026-05-19,5,Critical,Type 2 Diabetes,Endocrine,2026-05-28,Critical Care
+PAT003714,ADM00001900,D005,BED-D005-021,2026-05-19,5,High,Back Pain,Musculoskeletal,2026-05-27,High Dependency

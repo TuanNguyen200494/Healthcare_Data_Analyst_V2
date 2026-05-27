@@ -1,0 +1,13 @@
+﻿medication_id,medication_name,medication_group,unit_cost,requires_prescription
+MED001,Paracetamol,Analgesic,0.08,False
+MED002,Amoxicillin,Antibiotic,0.35,True
+MED003,Metformin,Diabetes,0.12,True
+MED004,Amlodipine,Cardiovascular,0.18,True
+MED005,Salbutamol,Respiratory,0.22,True
+MED006,Furosemide,Cardiovascular,0.15,True
+MED007,Insulin,Diabetes,1.6,True
+MED008,Atorvastatin,Cardiovascular,0.28,True
+MED009,Omeprazole,Gastrointestinal,0.16,True
+MED010,Ceftriaxone,Antibiotic,2.2,True
+MED011,Ibuprofen,Analgesic,0.1,False
+MED012,Losartan,Cardiovascular,0.25,True

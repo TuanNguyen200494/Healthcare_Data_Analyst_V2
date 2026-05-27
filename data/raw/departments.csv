@@ -1,0 +1,13 @@
+﻿department_id,department_name,department_type,floor,bed_capacity
+D001,Emergency,Clinical,1,20
+D002,Internal Medicine,Clinical,3,85
+D003,Cardiology,Clinical,4,60
+D004,Pediatrics,Clinical,2,55
+D005,Orthopedics,Clinical,5,45
+D006,Obstetrics,Clinical,6,50
+D007,General Surgery,Clinical,5,60
+D008,ICU,Critical Care,7,25
+D009,Laboratory,Diagnostic,1,0
+D010,Radiology,Diagnostic,1,0
+D011,Outpatient Clinic,Clinical,1,0
+D012,Nephrology,Clinical,4,40
