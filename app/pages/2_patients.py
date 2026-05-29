@@ -25,7 +25,7 @@ full_path = root / "app" / "config" / json_config_name
 ## Tìm vào file config rawdata"
 configureraw = get_raw_data_configures(full_path)
 
-required_tables = ['Patients', 'Critical_Lists', 'Encounters', 'Departments', 'Doctors', 'Diagnoses' 'LabOrders', 'LabResults', 'Medications', 'Prescriptions']
+required_tables = ['Patients', 'Critical_Lists', 'Encounters', 'Departments', 'Doctors', 'Diagnoses' 'LabOrders', 'LabResults', 'Medications', 'Prescriptions', 'Appointments']
 
 result = sum_validate(required_tables)
 if (result):
@@ -72,6 +72,10 @@ if(result):
     prescription_df_filename = configureraw[configureraw["table"]=="Prescriptions"]["file"].values[0]
     prescription_df_data = load_data(prescription_df_filename)
 
+    appointment_df_filename = configureraw[configureraw["table"]=="Appointments"]["file"].values[0]
+    appointment_df_data = load_data(appointment_df_filename)
+    appointment_df_data['appointment_date'] = pd.to_datetime(appointment_df_data['appointment_date'])
+
     with st.container(border=True):
             st.write("Tình trạng rủi ro các ca bệnh")
             col1, col2 = st.columns(2)
@@ -116,9 +120,33 @@ if(result):
                                 st.write("Nhóm Máu: " + result_personal_information_df['blood_type'].values[0])
                             with col2:
                                 st.write("Tuổi: " + result_personal_information_df['age'].values[0].astype(str))
-                                st.write("Ngày Sinh " + result_personal_information_df['date_of_birth'].values[0])
-                                st.write("Nơi Sinh " + result_personal_information_df['city'].values[0] + " - " + result_personal_information_df['district'].values[0])
+                                st.write("Ngày Sinh: " + result_personal_information_df['date_of_birth'].values[0])
+                                st.write("Nơi Sinh: " + result_personal_information_df['city'].values[0] + " - " + result_personal_information_df['district'].values[0])
                         
+                        with st.container(border=True):
+                            currentdate = '2026/05/23'
+                            st.write("THÔNG TIN LỊCH HẸN SẮP TỚI: Assume hôm nay là 23/5/2026")
+
+                            #count_future_appointment = appointment_df_data[(appointment_df_data['appointment_date']>pd.to_datetime(currentdate)) & (appointment_df_data['patient_id']==select_patient_id)]['patient_id'].count()
+                            #st.write(f"tìm thấy {count_future_appointment} lịch hẹn")
+                            df_appointment_with_select_patient = appointment_df_data[(appointment_df_data['appointment_date']>pd.to_datetime(currentdate)) & (appointment_df_data['patient_id']==select_patient_id)]
+                            #st.dataframe(df_appointment_with_select_patient)
+                            
+                            ## Phần tạo lịch hẹn:
+                            with st.expander(f"Phiếu Lịch Hẹn bệnh nhân : {result_personal_information_df['full_name'].values[0]}",expanded=True):
+                                pass
+
+                            ## Hiển thị các lịch hẹn đã có
+                            for index, row in df_appointment_with_select_patient.iterrows():
+                                with st.expander(f"Thông Tin Lịch Hẹn Ngày {row['appointment_date'].strftime('%Y-%m-%d')}", expanded=False):
+                                    col1, col2 = st.columns(2)
+                                    with col1: 
+                                        st.write("Giờ Hẹn: " + row['appointment_time'])
+                                        st.write("Bác Sĩ Phụ Trách: " + doctor_df_data[doctor_df_data['doctor_id']==row['doctor_id']]['doctor_name'].values[0])
+                                    with col2:
+                                        st.write("Chuyên Khoa: " + department_df_data[department_df_data['department_id']==row['department_id']]['department_name'].values[0])
+                                        st.write("Chỉ định: " + row['reason_for_visit'])
+
                         with st.container(border=True):
                             st.write("LỊCH SỬ THĂM KHÁM")
                             encounter_history_df = encounter_df_data[encounter_df_data['patient_id'] == select_patient_id]

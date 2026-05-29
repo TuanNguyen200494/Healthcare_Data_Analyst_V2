@@ -184,6 +184,36 @@ def prescriptions_data_validates(df: pd.DataFrame)->bool:
     else:
         return False
     
+def billing_data_validates(df: pd.DataFrame)->bool:
+    root = find_root_project()
+    data = "billing.csv"
+
+    full_path = root / "data" / "raw" / data
+    org_df = pd.read_csv(full_path)
+    list_columns = org_df.columns.to_list()
+
+    df_column = df.columns.to_list()
+
+    if (set(list_columns) == set(df_column)):
+        return True
+    else:
+        return False
+    
+def appointment_data_validates(df: pd.DataFrame)->bool:
+    root = find_root_project()
+    data = "appointments.csv"
+
+    full_path = root / "data" / "raw" / data
+    org_df = pd.read_csv(full_path)
+    list_columns = org_df.columns.to_list()
+
+    df_column = df.columns.to_list()
+
+    if (set(list_columns) == set(df_column)):
+        return True
+    else:
+        return False
+    
 def sum_validate(list_table:List):
     root = find_root_project()
     json_config_name = "rawdata_config.json"
@@ -215,6 +245,10 @@ def sum_validate(list_table:List):
             result = medications_data_validates(load_data(table_need_to_check["file"].values[0]))
         elif(l == "Prescriptions"):
             result = prescriptions_data_validates(load_data(table_need_to_check["file"].values[0]))
+        elif(l == "Billing"):
+            result = billing_data_validates(load_data(table_need_to_check["file"].values[0]))
+        elif(l == "Appointments"):
+            result = appointment_data_validates(load_data(table_need_to_check["file"].values[0]))
         if not result:
             return result
             break

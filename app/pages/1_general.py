@@ -2,13 +2,16 @@ import streamlit as st
 import json
 import pandas as pd
 from datetime import datetime
+import plotly.graph_objects as go
+import matplotlib.pyplot as plt
 
 from app.services.load_data import load_data
 from app.config.paths import find_root_project
-
 from app.config.configs import get_raw_data_configures
-
 from app.services.validate_columns import sum_validate
+from app.services.random_remaining_cost_billing import actual_payment
+
+
 
 st.set_page_config(
     page_title="Thông tin vận hành",
@@ -25,7 +28,7 @@ full_path = root / "app" / "config" / json_config_name
 ## Tìm vào file config rawdata"
 configureraw = get_raw_data_configures(full_path)
 
-required_tables = ['Patients', 'Encounters', 'Admissions', 'Beds', 'Critical_Lists']
+required_tables = ['Patients', 'Encounters', 'Admissions', 'Beds', 'Critical_Lists', 'Billing', 'Departments']
 
 result = sum_validate(required_tables)
 if (result):
@@ -61,6 +64,20 @@ if (result):
 
     critical_list_df_filename = configureraw[configureraw["table"]=="Critical_Lists"]["file"].values[0]
     critical_list_df_data = load_data(critical_list_df_filename)
+
+    billing_df_filename = configureraw[configureraw["table"]=="Billing"]["file"].values[0]
+    billing_df_data = load_data(billing_df_filename)
+    billing_df_data_added = billing_df_data
+    #billing_df_data_added['patient_payable'] = pd.to_numeric(billing_df_data_added['patient_payable'])
+    billing_df_data_added['actual_payment'] = billing_df_data_added.apply(actual_payment, axis=1)
+    #billing_df_data_added['total_charge'] = pd.to_numeric(billing_df_data_added['total_charge'])
+    billing_df_data_added['bill_date'] = pd.to_datetime(billing_df_data_added['bill_date'])
+    billing_df_data_added['billing_year'] = billing_df_data_added['bill_date'].dt.year
+    billing_df_data_added['billing_month'] = billing_df_data_added['bill_date'].dt.month
+
+    department_df_filename = configureraw[configureraw["table"]=="Departments"]["file"].values[0]
+    department_df_data = load_data(department_df_filename)
+    list_dept = department_df_data['department_id'].tolist()
 
 if(result):
 # Nhóm Thông tin tổng quát về bệnh nhân
@@ -136,3 +153,245 @@ if(result):
             st.metric(label = "Trung bình thời gian nằm viện", value = avg_stay_date, border=True)
 
 #Nhóm thông tin về doanh thu, bảo hiểm, công nợ
+    with st.container(border=True):
+        st.write("Thông tin Doanh Thu")
+        #st.dataframe(billing_df_data_added)
+
+        col1 , col2 ,col3 = st.columns(3)
+
+        with col1:
+            value = round(billing_df_data_added['total_charge'].sum(),2)
+            st.metric(label="Tổng Viện Phí(USD)", value = value, border = True)
+        with col2:
+            value_1 = round(billing_df_data_added['actual_payment'].sum()+billing_df_data_added['insurance_covered'].sum(),2)
+            st.metric(label="Thực Nhận(USD)", value = value_1, border = True)
+        with col3:
+            value_2 = round(value - value_1,2)
+            st.metric(label="Nợ Phí(USD)", value = value_2, border = True)
+
+        if 'select_year' not in st.session_state:
+                st.session_state.select_year = None
+        
+        list_year = billing_df_data_added['billing_year'].unique().tolist()
+        index = 0
+
+        if (st.session_state.select_year in list_year):
+            index = list_year.index(st.session_state.select_year)
+
+        billing_by_year = billing_df_data_added.groupby('billing_year').agg(
+            {
+                'service_charge': 'sum',
+                'medication_charge': 'sum',
+                'lab_charge': 'sum',
+                'room_charge': 'sum',
+                'total_charge': 'sum',
+                'insurance_covered': 'sum',
+                'patient_payable': 'sum',
+                'actual_payment': 'sum'
+            }
+        ).reset_index()
+        billing_by_year['debit_charge'] = billing_by_year['patient_payable'] - billing_by_year['actual_payment']
+        #st.dataframe(billing_by_year)
+
+        fig, ax = plt.subplots(figsize=(20,15))
+
+        bar1 = ax.bar(
+            billing_by_year['billing_year'],
+            billing_by_year['service_charge'],
+            label = "Service Charge",
+            color = "blue",
+        )
+        ax.bar_label(bar1, fmt="{:,.2f}", label_type="center", color="white", fontweight="bold")
+
+        bar2 = ax.bar(
+            billing_by_year['billing_year'],
+            billing_by_year['medication_charge'],
+            bottom=billing_by_year['service_charge'],
+            label = "Medication Charge",
+            color = "green",
+        )
+        ax.bar_label(bar2, fmt="{:,.2f}", label_type="center", color="white", fontweight="bold")
+
+        bar3 = ax.bar(
+            billing_by_year['billing_year'],
+            billing_by_year['lab_charge'],
+            bottom=(billing_by_year['service_charge'] + billing_by_year['medication_charge']),
+            label = "Lab Charge",
+            color = "yellow",
+        )
+        ax.bar_label(bar3, fmt="{:,.2f}", label_type="center", color="red", fontweight="bold")
+
+        bar4 = ax.bar(
+            billing_by_year['billing_year'],
+            billing_by_year['room_charge'],
+            bottom=(billing_by_year['service_charge'] + billing_by_year['medication_charge']+billing_by_year['lab_charge']),
+            label = "Room Charge",
+            color = "red",
+        )
+        ax.bar_label(bar4, fmt="{:,.2f}", label_type="center", color="white", fontweight="bold")
+
+        ax.plot(
+            billing_by_year['billing_year'],
+            billing_by_year['debit_charge'],
+            label = "Nợ Phí",
+            color = "gray",
+            linewidth=3,
+            marker = 'o',
+            markersize = 8,
+        )
+
+        ax.set_xlabel("Năm")
+        ax.set_ylabel("Số Tiền")
+        ax.legend(loc="upper right")
+        with st.expander("Biểu đồ Doanh Thu, Nợ Phí qua các năm", expanded=False):
+            st.pyplot(fig)
+        
+        st.session_state.select_year = st.selectbox("Xem Thông Tin Chi Tiết",list_year, index=index)
+        df_year_selection = billing_df_data_added[billing_df_data_added['billing_year']==st.session_state.select_year]
+        with st.expander(f"Biểu đồ Doanh Thu Chi Tiết Theo Tháng Trong Năm {st.session_state.select_year}",expanded=False):
+            df_year_selection = df_year_selection.groupby('billing_month').agg(
+                {
+                    'service_charge': 'sum',
+                    'medication_charge': 'sum',
+                    'lab_charge': 'sum',
+                    'room_charge': 'sum',
+                    'total_charge': 'sum',
+                    'insurance_covered': 'sum',
+                    'patient_payable': 'sum',
+                    'actual_payment': 'sum'
+                }
+            ).reset_index()
+            df_year_selection['debit_charge'] = df_year_selection['patient_payable'] - df_year_selection['actual_payment']
+
+            for c in range(1,13):
+                if c not in df_year_selection['billing_month']:
+                    add_row = {
+                        'billing_month': c,
+                        'service_charge': 0,
+                        'medication_charge':0,
+                        'lab_charge':0,
+                        'room_charge':0,
+                        'total_charge':0,
+                        'insurance_covered':0,
+                        'patient_payable':0,
+                        'actual_payment':0,
+                        'debit_charge':0
+                    }
+                    df_year_selection = pd.concat([df_year_selection, pd.DataFrame([add_row])])
+            #st.dataframe(df_year_selection)
+            fig1, ax1 = plt.subplots(figsize=(20,10))
+
+            bar1 = ax1.bar(
+            df_year_selection['billing_month'],
+            df_year_selection['service_charge'],
+            label = "Service Charge",
+            color = "blue",
+            )
+            ax1.bar_label(bar1, fmt="{:,.2f}", label_type="center", color="white", fontweight="bold")
+
+            bar2 = ax1.bar(
+                df_year_selection['billing_month'],
+                df_year_selection['medication_charge'],
+                bottom=df_year_selection['service_charge'],
+                label = "Medication Charge",
+                color = "green",
+            )
+            ax1.bar_label(bar2, fmt="{:,.2f}", label_type="center", color="white", fontweight="bold")
+
+            bar3 = ax1.bar(
+                df_year_selection['billing_month'],
+                df_year_selection['lab_charge'],
+                bottom=(df_year_selection['service_charge']+df_year_selection['medication_charge']),
+                label = "Lab Charge",
+                color = "yellow",
+            )
+            ax1.bar_label(bar3, fmt="{:,.2f}", label_type="center", color="red", fontweight="bold")
+
+            bar4 = ax1.bar(
+                df_year_selection['billing_month'],
+                df_year_selection['room_charge'],
+                bottom=(df_year_selection['service_charge']+df_year_selection['medication_charge']+df_year_selection['lab_charge']),
+                label = "Room Charge",
+                color = "red",
+            )
+            ax1.bar_label(bar4, fmt="{:,.2f}", label_type="center", color="white", fontweight="bold")
+
+            ax1.plot(
+                df_year_selection['billing_month'],
+                df_year_selection['debit_charge'],
+                label = "Nợ Phí",
+                color = "gray",
+                linewidth=3,
+                marker = 'o',
+                markersize = 8,
+            )
+
+            ax1.set_xlabel("Tháng")
+            ax1.set_ylabel("Số Tiền")
+            ax1.legend(loc="upper right")
+            st.pyplot(fig1)
+        
+        with st.expander(f"Biểu Đồ Doanh Thu Chi Tiết Theo Phòng Ban Trong Năm {st.session_state.select_year}",expanded=False):
+            #Dựa vào billing, encounters và departments để tạo nên DataFrame sử dụng cho dạng dữ liệu này
+            ## sử dụng biểu đồ cột ngang
+            df_merge = encounter_df_data.merge(billing_df_data_added, on='encounter_id', how='inner')[['encounter_id','department_id','doctor_id','chief_complaint', 'diagnosis_code', 'severity_level', 'service_charge', 'medication_charge', 'lab_charge', 'room_charge','total_charge','insurance_covered','patient_payable','payment_status','actual_payment', 'billing_year','billing_month']]
+            df_merge = df_merge.merge(department_df_data, on='department_id', how='inner')
+            #st.dataframe(df_merge)
+            df_year_selection_dept_detail = df_merge[df_merge['billing_year']==st.session_state.select_year]
+            #st.dataframe(df_year_selection_dept_detail)
+            df_year_selection_dept_detail = df_year_selection_dept_detail.groupby('department_id').agg(
+                {
+                    'service_charge':'sum',
+                    'medication_charge':'sum',
+                    'lab_charge':'sum',
+                    'room_charge':'sum',
+                    'total_charge': 'sum',
+                    'insurance_covered': 'sum',
+                    'patient_payable': 'sum',
+                    'actual_payment':'sum'
+                }
+            ).reset_index()
+            for dept in list_dept:
+                if dept not in df_year_selection_dept_detail['department_id'].tolist():
+                    add_zero = {
+                        'department_id': dept,
+                        'service_charge':0,
+                        'medication_charge':0,
+                        'lab_charge':0,
+                        'room_charge':0,
+                        'total_charge':0,
+                        'insurance_covered': 0,
+                        'patient_payable':0,
+                        'actual_payment':0                       
+                    }
+                    df_year_selection_dept_detail = pd.concat([df_year_selection_dept_detail, pd.DataFrame([add_zero])])
+            df_year_selection_dept_detail['debit_charge'] = df_year_selection_dept_detail['patient_payable'] - df_year_selection_dept_detail['actual_payment']
+            df_year_selection_dept_detail = df_year_selection_dept_detail.sort_values(by=['total_charge'])
+            #st.dataframe(df_year_selection_dept_detail)
+
+            fig2, ax2 = plt.subplots(figsize=(15,12))
+            bar1_1 = ax2.barh(
+                df_year_selection_dept_detail['department_id'],
+                df_year_selection_dept_detail['insurance_covered'],
+                label = "Insurance",
+                color = 'blue'
+            )
+            bar2_2 = ax2.barh(
+                df_year_selection_dept_detail['department_id'],
+                df_year_selection_dept_detail['actual_payment'],
+                left = df_year_selection_dept_detail['insurance_covered'],
+                label = "Service Charge",
+                color = 'green'
+            )
+            bar3_3 = ax2.barh(
+                df_year_selection_dept_detail['department_id'],
+                df_year_selection_dept_detail['debit_charge'],
+                left = df_year_selection_dept_detail['insurance_covered']+df_year_selection_dept_detail['actual_payment'],
+                label = "Debit Charge",
+                color = 'red'
+            )
+
+            ax2.set_xlabel("Số Tiền")
+            ax2.set_ylabel("Phòng Ban")
+            ax2.legend(loc="upper right")
+            st.pyplot(fig2)

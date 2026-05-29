@@ -70,5 +70,17 @@
         "Description": "Thông Tin Đơn Thuốc",
         "required": "True",
         "file": "prescriptions.csv"
+    },
+    {
+        "table": "Billing",
+        "Description": "Thông tin viện phí",
+        "required": "True",
+        "file": "billing.csv"
+    },
+    {
+        "table": "Appointments",
+        "Description": "Thông tin lịch tái khám bệnh nhân",
+        "required": "True",
+        "file": "appointments.csv"
     }
 ]
