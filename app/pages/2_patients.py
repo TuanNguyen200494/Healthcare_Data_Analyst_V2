@@ -1,7 +1,7 @@
 import streamlit as st
 import json
 import pandas as pd
-from datetime import datetime
+from datetime import datetime,timedelta
 
 from app.services.load_data import load_data
 from app.config.paths import find_root_project
@@ -26,6 +26,7 @@ full_path = root / "app" / "config" / json_config_name
 configureraw = get_raw_data_configures(full_path)
 
 required_tables = ['Patients', 'Critical_Lists', 'Encounters', 'Departments', 'Doctors', 'Diagnoses' 'LabOrders', 'LabResults', 'Medications', 'Prescriptions', 'Appointments']
+
 
 result = sum_validate(required_tables)
 if (result):
@@ -76,6 +77,18 @@ if(result):
     appointment_df_data = load_data(appointment_df_filename)
     appointment_df_data['appointment_date'] = pd.to_datetime(appointment_df_data['appointment_date'])
 
+    def get_doctor_name(doctor_id):
+        return doctor_df_data[doctor_df_data['doctor_id']== doctor_id]['doctor_name'].values[0]
+    
+    def get_department_name(department_id):
+        return department_df_data[department_df_data['department_id']== department_id]['department_name'].values[0]
+    
+    if "form_submitted" not in st.session_state:
+        st.session_state.form_submitted = False
+    if "duplicate_patient_appointment" not in st.session_state:
+        st.session_state.duplicate_patient_appointment = False
+
+
     with st.container(border=True):
             st.write("Tình trạng rủi ro các ca bệnh")
             col1, col2 = st.columns(2)
@@ -91,8 +104,13 @@ if(result):
             if(value_1 > 0):
                 with st.container(border = True):
                     st.write("Chi tiết các ca bệnh rủi ro")
-                    if 'select_patient' not in st.session_state:
+
+                    if 'select_patient' not in st.session_state: ##Lưu patient_id
                         st.session_state.select_patient = None
+                    if "show_patient_detail" not in st.session_state: ##Lưu trạng thái nút nhấn hiển thị chi tiết bệnh nhân, tránh bị rerun khi nhấn nút
+                        st.session_state.show_patient_detail = False
+
+
                     ##dựa vào danh patient_id trong high_risk_patient_watchlist, lấy thông tin readable của bệnh nhân từ patients, hiển thị tên - tuổi thay vì patients_id
                     critical_list_patient_id = critical_list_df_data[(critical_list_df_data['watchlist_status']!= 'Completed') & (critical_list_df_data['risk_level']=="Critical")]
 
@@ -103,13 +121,17 @@ if(result):
                     index = 0
 
                     if (st.session_state.select_patient in select_patient_list):
-                        index = select_patient_list.index(st.session_state.select_patient)
-
+                        index = select_patient_list.index(st.session_state.select_patient) 
+                                            
                     st.session_state.select_patient = st.selectbox("Chọn bệnh nhân",select_patient_list, index=index)
+
+
                     patient_information_button = st.button("Xem bệnh nhân")
-                    if(patient_information_button):
-                        result_personal_information_df = patient_df_data[patient_df_data['full_name'] + " - Age: " + patient_df_data['age'].astype(str) == st.session_state.select_patient]
-                        select_patient_id = result_personal_information_df['patient_id'].values[0]
+                    result_personal_information_df = patient_df_data[patient_df_data['full_name'] + " - Age: " + patient_df_data['age'].astype(str) == st.session_state.select_patient]
+                    select_patient_id = result_personal_information_df['patient_id'].values[0]
+                    if(patient_information_button):                       
+                        st.session_state.show_patient_detail = True
+                    if(st.session_state.show_patient_detail):
                         with st.container(border=True):                           
                             #st.dataframe(result_personal_information_df)
                             st.write("THÔNG TIN CÁ NHÂN")
@@ -130,11 +152,7 @@ if(result):
                             #count_future_appointment = appointment_df_data[(appointment_df_data['appointment_date']>pd.to_datetime(currentdate)) & (appointment_df_data['patient_id']==select_patient_id)]['patient_id'].count()
                             #st.write(f"tìm thấy {count_future_appointment} lịch hẹn")
                             df_appointment_with_select_patient = appointment_df_data[(appointment_df_data['appointment_date']>pd.to_datetime(currentdate)) & (appointment_df_data['patient_id']==select_patient_id)]
-                            #st.dataframe(df_appointment_with_select_patient)
-                            
-                            ## Phần tạo lịch hẹn:
-                            with st.expander(f"Phiếu Lịch Hẹn bệnh nhân : {result_personal_information_df['full_name'].values[0]}",expanded=True):
-                                pass
+                            #st.dataframe(df_appointment_with_select_patient)                       
 
                             ## Hiển thị các lịch hẹn đã có
                             for index, row in df_appointment_with_select_patient.iterrows():
@@ -146,6 +164,61 @@ if(result):
                                     with col2:
                                         st.write("Chuyên Khoa: " + department_df_data[department_df_data['department_id']==row['department_id']]['department_name'].values[0])
                                         st.write("Chỉ định: " + row['reason_for_visit'])
+                                                        ## Phần tạo lịch hẹn:
+                            with st.expander(f"Tạo Lịch Hẹn bệnh nhân : {result_personal_information_df['full_name'].values[0]}",expanded=False):
+
+                                    ##Khởi tạo các biến Session State khi Form được load trở lại
+                                    if ('duplicate_patient_appointment' not in st.session_state):
+                                        st.session_state.duplicate_patient_appointment = False
+                                    if ('duplicate_doctor_appointment' not in st.session_state):
+                                        st.session_state.duplicate_doctor_appointment = False
+                                    if ('approve_scheduled' not in st.session_state):
+                                        st.session_state.approve_scheduled = False
+                                    date_appointments = st.date_input("Chọn Ngày Tái Khám", min_value=datetime.strptime(currentdate, '%Y/%m/%d').date(), max_value= datetime.strptime(currentdate, '%Y/%m/%d').date() + timedelta(days=730),key="appointment_date")
+                                    time_appointments = st.time_input("Chọn Giờ Điều Trị",key="appointment_time")
+                                    doctor_appointments = st.selectbox(label = "Chọn Bác Sĩ Điều trị", options=doctor_df_data['doctor_id'], format_func=get_doctor_name,key="appointment_doctor")
+                                    department_appointments = st.selectbox(label = "Khoa Điều Trị", options=department_df_data['department_id'], format_func=get_department_name,key="appointment_department")
+                                    reason_appointments = st.text_input("Mục Đích Tái Khám", key="appointment_reason")
+                                    create_button=False
+                                    #submit_button = st.form_submit_button(label="Kiểm Tra & Xác Nhận Lịch Hẹn")                                    
+                                    for index, row in df_appointment_with_select_patient.iterrows():
+                                        st.session_state.duplicate_patient_appointment = False
+                                        st.session_state.approve_scheduled = False
+                                        #st.write("Ngày từ input: " + date_appointments.strftime('%Y-%m-%d'))
+                                        #st.write("Ngày từ DF: " + row['appointment_date'].strftime('%Y-%m-%d'))
+                                        if(date_appointments.strftime('%Y-%m-%d') == row['appointment_date'].strftime('%Y-%m-%d') and time_appointments.strftime('%H:%M') == row['appointment_time']):
+                                            st.session_state.duplicate_patient_appointment = True
+                                            break 
+
+                                    df_get_list_appointment_of_doctor = appointment_df_data[(appointment_df_data['doctor_id']==doctor_appointments)]
+                                    for index, row in df_get_list_appointment_of_doctor.iterrows():
+                                        st.session_state.duplicate_doctor_appointment = False
+                                        st.session_state.approve_scheduled = False
+                                        if(date_appointments.strftime('%Y-%m-%d') == row['appointment_date'].strftime('%Y-%m-%d') and time_appointments.strftime('%H:%M') == row['appointment_time']):
+                                            st.session_state.duplicate_doctor_appointment = True
+                                            break
+
+                                    if(st.session_state.duplicate_patient_appointment):
+                                        st.error("Đã trùng lịch của bệnh nhân - Không Thể Tạo Lịch Hẹn")
+                                        st.session_state.approve_scheduled = False
+                                    elif(st.session_state.duplicate_doctor_appointment):
+                                        st.error("Trùng Lịch với bác sĩ - Không Thể Tạo Lịch Hẹn")
+                                        st.session_state.approve_scheduled = False
+                                    else:
+                                        st.success("Có thể tạo Lịch Tái Khám")
+                                        st.session_state.approve_scheduled = True
+                                    
+                                    if(st.session_state.approve_scheduled):
+                                        create_button = st.button("Tạo Lịch Hẹn")
+                                    
+                                    if(create_button):
+                                        st.session_state.show_patient_detail = False
+                                        st.session_state.approve_scheduled = False
+                                        st.rerun()
+
+
+                                
+
 
                         with st.container(border=True):
                             st.write("LỊCH SỬ THĂM KHÁM")
