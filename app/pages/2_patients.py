@@ -10,6 +10,8 @@ from app.config.configs import get_raw_data_configures
 
 from app.services.validate_columns import sum_validate
 
+from app.services.import_new_appointment import import_new_appointment
+
 st.set_page_config(
     page_title="Thông tin bệnh nhân",
     layout = "wide"
@@ -33,6 +35,10 @@ if (result):
     st.success("các feature dữ liệu yêu cầu thoả điều kiện")
 else:
     st.error("Một trong các dữ liệu đã sai")
+
+if(st.button('clear cache')):
+    st.cache_data.clear()
+    st.rerun()
 
 if(result):
     patient_df_filename = configureraw[configureraw["table"]=="Patients"]["file"].values[0]
@@ -75,7 +81,7 @@ if(result):
 
     appointment_df_filename = configureraw[configureraw["table"]=="Appointments"]["file"].values[0]
     appointment_df_data = load_data(appointment_df_filename)
-    appointment_df_data['appointment_date'] = pd.to_datetime(appointment_df_data['appointment_date'])
+    appointment_df_data['appointment_date'] = pd.to_datetime(appointment_df_data['appointment_date'],format="%Y-%m-%d")
 
     def get_doctor_name(doctor_id):
         return doctor_df_data[doctor_df_data['doctor_id']== doctor_id]['doctor_name'].values[0]
@@ -146,14 +152,15 @@ if(result):
                                 st.write("Nơi Sinh: " + result_personal_information_df['city'].values[0] + " - " + result_personal_information_df['district'].values[0])
                         
                         with st.container(border=True):
-                            currentdate = '2026/05/23'
-                            st.write("THÔNG TIN LỊCH HẸN SẮP TỚI: Assume hôm nay là 23/5/2026")
+                            currentdate = '2026-05-23'
+                            currentdate_dt = pd.to_datetime(currentdate, format="%Y-%m-%d")
+                            st.write("THÔNG TIN LỊCH HẸN SẮP TỚI: Assume hôm nay là 2026-05-23")
 
                             #count_future_appointment = appointment_df_data[(appointment_df_data['appointment_date']>pd.to_datetime(currentdate)) & (appointment_df_data['patient_id']==select_patient_id)]['patient_id'].count()
                             #st.write(f"tìm thấy {count_future_appointment} lịch hẹn")
-                            df_appointment_with_select_patient = appointment_df_data[(appointment_df_data['appointment_date']>pd.to_datetime(currentdate)) & (appointment_df_data['patient_id']==select_patient_id)]
+                            df_appointment_with_select_patient = appointment_df_data[(appointment_df_data['appointment_date']>currentdate_dt) & (appointment_df_data['patient_id']==select_patient_id)]
                             #st.dataframe(df_appointment_with_select_patient)                       
-
+                            #st.dataframe(df_appointment_with_select_patient)
                             ## Hiển thị các lịch hẹn đã có
                             for index, row in df_appointment_with_select_patient.iterrows():
                                 with st.expander(f"Thông Tin Lịch Hẹn Ngày {row['appointment_date'].strftime('%Y-%m-%d')}", expanded=False):
@@ -164,7 +171,7 @@ if(result):
                                     with col2:
                                         st.write("Chuyên Khoa: " + department_df_data[department_df_data['department_id']==row['department_id']]['department_name'].values[0])
                                         st.write("Chỉ định: " + row['reason_for_visit'])
-                                                        ## Phần tạo lịch hẹn:
+                            ## Phần tạo lịch hẹn:
                             with st.expander(f"Tạo Lịch Hẹn bệnh nhân : {result_personal_information_df['full_name'].values[0]}",expanded=False):
 
                                     ##Khởi tạo các biến Session State khi Form được load trở lại
@@ -174,16 +181,17 @@ if(result):
                                         st.session_state.duplicate_doctor_appointment = False
                                     if ('approve_scheduled' not in st.session_state):
                                         st.session_state.approve_scheduled = False
-                                    date_appointments = st.date_input("Chọn Ngày Tái Khám", min_value=datetime.strptime(currentdate, '%Y/%m/%d').date(), max_value= datetime.strptime(currentdate, '%Y/%m/%d').date() + timedelta(days=730),key="appointment_date")
+                                    date_appointments = st.date_input("Chọn Ngày Tái Khám", min_value=currentdate_dt, max_value= currentdate_dt + timedelta(days=730),key="appointment_date")
                                     time_appointments = st.time_input("Chọn Giờ Điều Trị",key="appointment_time")
                                     doctor_appointments = st.selectbox(label = "Chọn Bác Sĩ Điều trị", options=doctor_df_data['doctor_id'], format_func=get_doctor_name,key="appointment_doctor")
                                     department_appointments = st.selectbox(label = "Khoa Điều Trị", options=department_df_data['department_id'], format_func=get_department_name,key="appointment_department")
                                     reason_appointments = st.text_input("Mục Đích Tái Khám", key="appointment_reason")
                                     create_button=False
-                                    #submit_button = st.form_submit_button(label="Kiểm Tra & Xác Nhận Lịch Hẹn")                                    
+                                    #submit_button = st.form_submit_button(label="Kiểm Tra & Xác Nhận Lịch Hẹn")     
+                                    st.session_state.duplicate_patient_appointment = False
+                                    st.session_state.duplicate_doctor_appointment = False
+                                    st.session_state.approve_scheduled = False                               
                                     for index, row in df_appointment_with_select_patient.iterrows():
-                                        st.session_state.duplicate_patient_appointment = False
-                                        st.session_state.approve_scheduled = False
                                         #st.write("Ngày từ input: " + date_appointments.strftime('%Y-%m-%d'))
                                         #st.write("Ngày từ DF: " + row['appointment_date'].strftime('%Y-%m-%d'))
                                         if(date_appointments.strftime('%Y-%m-%d') == row['appointment_date'].strftime('%Y-%m-%d') and time_appointments.strftime('%H:%M') == row['appointment_time']):
@@ -192,8 +200,6 @@ if(result):
 
                                     df_get_list_appointment_of_doctor = appointment_df_data[(appointment_df_data['doctor_id']==doctor_appointments)]
                                     for index, row in df_get_list_appointment_of_doctor.iterrows():
-                                        st.session_state.duplicate_doctor_appointment = False
-                                        st.session_state.approve_scheduled = False
                                         if(date_appointments.strftime('%Y-%m-%d') == row['appointment_date'].strftime('%Y-%m-%d') and time_appointments.strftime('%H:%M') == row['appointment_time']):
                                             st.session_state.duplicate_doctor_appointment = True
                                             break
@@ -211,10 +217,32 @@ if(result):
                                     if(st.session_state.approve_scheduled):
                                         create_button = st.button("Tạo Lịch Hẹn")
                                     
-                                    if(create_button):
-                                        st.session_state.show_patient_detail = False
+                                    if(create_button):                            
+                                        row_collected = {
+                                            "patient_id": select_patient_id,
+                                            "doctor_id": doctor_appointments,
+                                            "department_id": department_appointments,
+                                            "appointment_date": date_appointments.strftime("%Y-%m-%d"),
+                                            "appointment_time": time_appointments.strftime('%H:%M'),
+                                            "appointment_status": "Scheduled",
+                                            "reason_for_visit": reason_appointments,
+                                            "created_at": datetime.now().strftime('%Y-%m-%d')
+                                        }
+                                        migrate_df = import_new_appointment(appointment_df_data,pd.DataFrame([row_collected]))
+
+                                        # Ép kiểu format cho cột appointment_date, tránh bị lỗi khi app đọc những dòng mới
+                                        migrate_df["appointment_date"] = pd.to_datetime(
+                                            migrate_df["appointment_date"]
+                                        ).dt.strftime("%Y-%m-%d")
+
+                                        full_path_appointment = root / "data" / "raw" / appointment_df_filename
+                                        migrate_df.to_csv(full_path_appointment,index=False)
+
+                                        st.cache_data.clear()
+                                        st.session_state.show_patient_detail = True
                                         st.session_state.approve_scheduled = False
                                         st.rerun()
+
 
 
                                 

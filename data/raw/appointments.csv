@@ -1,4 +1,4 @@
-﻿appointment_id,patient_id,doctor_id,department_id,appointment_date,appointment_time,appointment_status,reason_for_visit,created_at
+appointment_id,patient_id,doctor_id,department_id,appointment_date,appointment_time,appointment_status,reason_for_visit,created_at
 APT00000001,PAT003523,DOC0028,D001,2022-06-02,17:45,Completed,Diabetes follow-up,2022-04-29
 APT00000002,PAT002899,DOC0020,D011,2026-01-07,15:15,Completed,Fever,2025-11-24
 APT00000003,PAT002528,DOC0026,D011,2026-02-26,10:30,Completed,General check-up,2026-02-20
@@ -15999,3 +15999,4 @@ APT00015997,PAT003861,DOC0026,D011,2023-07-06,08:45,Completed,Chest pain,2023-06
 APT00015998,PAT001962,DOC0049,D011,2022-01-21,12:00,Completed,Hypertension follow-up,2021-12-28
 APT00015999,PAT000856,DOC0049,D011,2022-12-15,09:00,Cancelled,Follow-up,2022-12-01
 APT00016000,PAT002814,DOC0020,D011,2026-03-28,07:45,Completed,Diabetes follow-up,2026-03-08
+APT00016001,PAT001595,DOC0001,D001,2026-06-02,09:15,Scheduled,Diabetes Follow-Up,2026-05-31
