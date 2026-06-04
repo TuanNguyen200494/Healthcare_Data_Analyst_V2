@@ -79,6 +79,7 @@ if (result):
     department_df_data = load_data(department_df_filename)
     list_dept = department_df_data['department_id'].tolist()
 
+
 if(result):
 # Nhóm Thông tin tổng quát về bệnh nhân
     with st.container(border=True):

@@ -10,6 +10,16 @@ patient_attention = st.Page(
     title= "Thông tin về bệnh nhân"
 )
 
+doctor_information = st.Page(
+    "app/pages/3_doctors.py",
+    title= "Thông tin về bác sĩ"
+)
+
+lab_information = st.Page(
+    "app/pages/4_labs.py",
+    title = "Phòng Lab"
+)
+
 configuration = st.Page(
     "app/pages/n_configurations.py",
     title = "Configuration"
@@ -19,6 +29,8 @@ nav = st.navigation(
     [
         general_page,
         patient_attention,
+        doctor_information,
+        lab_information,
         configuration
     ],
     position="top"
